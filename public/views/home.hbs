@@ -9,5 +9,19 @@
 <body>
   <h1>{{ title }}</h1>
   <p>Welcome to the Recipe Website!</p>
+
+  {{#if recipes.length}}
+  <ul>
+    {{#each recipes}}
+    <li>
+      <h2>{{this.name}}</h2>
+      <p>Ingredients: {{this.ingredients}}</p>
+      <p>Instructions: {{this.instructions}}</p>
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p>No recipes Found</p>
+  {{/if}}
 </body>
 </html>
