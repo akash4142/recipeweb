@@ -7,11 +7,11 @@ const hbs = require('hbs'); // Add this line
 
 app.use(express.json());
 app.use(express.static('public'));
-app.set('views', path.join(__dirname, 'public', 'views'));
+app.set('views', path.join(__dirname, 'public')); // Update this line
 
 // Set the view engine to "hbs"
 app.set('view engine', 'hbs');
-hbs.registerPartials(path.join(__dirname, 'public', 'views', 'partials')); // if you have partials
+hbs.registerPartials(path.join(__dirname, 'public', 'partials')); // Update this line
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
